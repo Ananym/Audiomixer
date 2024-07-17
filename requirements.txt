@@ -1,0 +1,6 @@
+pynput
+pystray
+psutil
+pywin32
+pycaw
+pyyaml

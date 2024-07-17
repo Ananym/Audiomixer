@@ -1,0 +1,13 @@
+activatorHotkey: ctrl+shift
+incrementKey: ']'
+decrementKey: '['
+muteToggleKey: m
+scrollVolumeScale: 0.1
+keyVolumeScale: 0.1
+indicatorSize: 80
+indicatorColor: '#000fff000'
+indicatorXOffset: 15
+indicatorYOffset: 15
+exitKey: x
+searchChildrenOfParents: false
+searchMaxDepth: 2

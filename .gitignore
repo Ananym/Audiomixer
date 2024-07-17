@@ -1,0 +1,6 @@
+nodemon.json
+audiomixer.spec
+launch.json
+build/
+__pycache__/
+dist/
