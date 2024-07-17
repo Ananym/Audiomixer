@@ -1,19 +1,30 @@
-# Quick Audio Mixer
+<div style="display: flex; align-items: center;">
+  <img src="trayicon.png" alt="Quick Audio Mixer Icon" style="width: 50px; height: 50px; margin-right: 10px; margin-bottom: 20px;">
+  <h1>Quick Audio Mixer</h1>
+</div>
 
-Adds volume mixing hotkeys to windows, allowing you to quickly mix noisy apps without an arduous trip through windows volume mixer.
-Works with both keyboard keys and scrolling to adjust volume, with configurable hotkeys.
+Adds volume mixing hotkeys to windows, allowing you to quickly adjust volume on programs without a long trip through windows volume mixer.
+Supports both keyboard keys and scrolling to adjust volume, with configurable hotkeys.
 Available as a pyinstaller-packaged executable - see releases.
 
-## Usage
+## Release Usage
 
-Run the executable, or add it to startup.
+Warning: even uncompressed, the release archive is currently not very antivirus friendly due to the system calls.
+You may find it preferable to run from source.
 
-Default keys:
-Ctrl + Shift + Scroll while pointing at a noisy window to adjust its volume,
-Ctrl + Shift + Middle click to toggle mute,
-Ctrl + Shift + { or } to adjust volume of active window,
-Ctrl + Shift + m to toggle mute on active window,
-Ctrl + Shift + x to quit, or quit via tray icon.
+Run the executable, or add it to startup using the included script.
+
+## Default keys:
+
+| Binding | Effect |
+|---------|--------|
+| Ctrl + Shift + Scroll | Adjust volume of the window under the cursor |
+| Ctrl + Shift + Middle click | Toggle mute on the window under the cursor |
+| Ctrl + Shift + [ or ] | Adjust volume of the active window |
+| Ctrl + Shift + m | Toggle mute on the active window |
+| Ctrl + Shift + x | Quit the application |
+
+You can also refresh the config or quit the application using the tray icon.
 
 ## Config
 
@@ -26,5 +37,7 @@ Reassigning activators and function keys ought to work how you expect.
 ## Todo
 
 The various session-finding mechanisms in system_interactions evolved to handle an increasing set of edge cases, and is now somewhat unholy.  These bits could use some work to improve search performance.
+
+Hoping to find a way to reduce the suspicion of antivirus software.
 
 Feedback welcome!
