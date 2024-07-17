@@ -1,5 +1,5 @@
 <div style="display: flex; align-items: center;">
-  <img src="./trayicon.png" alt="Quick Audio Mixer Icon" style="width: 50px; height: 50px; margin-right: 10px; margin-bottom: 20px;">
+  <img src="./icon.png" alt="Quick Audio Mixer Icon" style="width: 50px; height: 50px; margin-right: 10px; margin-bottom: 20px;">
   <h1>Quick Audio Mixer</h1>
 </div>
 
