@@ -58,6 +58,9 @@ class EventHandler:
         self.search_children_of_parents = config.searchChildrenOfParents
         self.search_max_depth = config.searchMaxDepth
 
+    def _alertNoSession(self):
+        print("No audio session found")
+
     def _set_mouse_locked(self, x, y, session):
         if self.current_session != session:
             self.current_session = session
@@ -106,7 +109,7 @@ class EventHandler:
             return
         session = self._get_session_cached(pid)
         if not session:
-            print("no audio session")
+            self._alertNoSession()
         new_volume = adjust_volume_for_session(session, self.volume_scale * diff)
         if new_volume is None:
             return
@@ -119,7 +122,7 @@ class EventHandler:
             return
         session = self._get_session_cached(pid)
         if not session:
-            print("no audio session")
+            self._alertNoSession()
         new_volume = adjust_volume_for_session(session, self.key_volume_diff)
         if new_volume is None:
             return
@@ -132,7 +135,7 @@ class EventHandler:
             return
         session = self._get_session_cached(pid)
         if not session:
-            print("no audio session")
+            self._alertNoSession()
         new_volume = adjust_volume_for_session(session, -self.key_volume_diff)
         if new_volume is None:
             return
@@ -148,7 +151,7 @@ class EventHandler:
             return
         session = self._get_session_cached(pid)
         if not session:
-            print("no audio session")
+            self._alertNoSession()
         self.muted = toggle_mute(session)
         self.indicator.queue_set_mute(self.muted)
         self._set_mouse_locked(x, y, session)
@@ -174,7 +177,7 @@ class EventHandler:
             return
         session = self._get_session_cached(pid)
         if not session:
-            print("no audio session")
+            self._alertNoSession()
         self.muted = toggle_mute(session)
         self._set_window_locked(session)
         self.indicator.queue_set_mute(self.muted)
