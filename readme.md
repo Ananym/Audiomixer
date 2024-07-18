@@ -14,7 +14,7 @@ You may find it preferable to run from source.
 
 Run the executable, or add it to startup using the included script.
 
-## Default keys:
+## Default keys
 
 | Binding | Effect |
 |---------|--------|
