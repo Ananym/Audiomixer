@@ -4,25 +4,37 @@
 </div>
 
 Adds volume mixing hotkeys to windows, allowing you to quickly adjust volume on programs without a long trip through windows volume mixer.
-Supports both keyboard keys and scrolling to adjust volume, with configurable hotkeys.
-Available as a pyinstaller-packaged executable - see releases.
+Features:
+
+- Configurable hotkeys to mute/adjust volume of window under cursor
+- Configurable hotkeys to mute/adjust volume of active window
+- Config via yaml file
+- Tray icon
+- Available as a pyinstaller-packaged executable
 
 ## Release Usage
 
-Warning: even uncompressed, the release archive is currently not very antivirus friendly due to the system calls.
-You may find it preferable to run from source.
+Warning: some antiviruses may flag the installer package as malware due to the system calls. It may be preferable to run from source.
+Download and extract the release package from https://github.com/Ananym/Audiomixer/releases .
+Run the executable, or add it to startup using the included "add-exe-to-startup.ps1" script.
 
-Run the executable, or add it to startup using the included script.
+## Running from Source:
+
+Requires python 3.10 or later.
+Download the repository (git clone or download zip and extract)
+Run `pip install -r requirements.txt` to install dependencies.
+Run the included "add-py-to-startup.ps1" script to add audiomixer to startup,
+Or just run `python audiomixer.py` to start the application directly.
 
 ## Default keys
 
-| Binding | Effect |
-|---------|--------|
-| Ctrl + Shift + Scroll | Adjust volume of the window under the cursor |
-| Ctrl + Shift + Middle click | Toggle mute on the window under the cursor |
-| Ctrl + Shift + [ or ] | Adjust volume of the active window |
-| Ctrl + Shift + m | Toggle mute on the active window |
-| Ctrl + Shift + x | Quit the application |
+| Binding                     | Effect                                       |
+| --------------------------- | -------------------------------------------- |
+| Ctrl + Shift + Scroll       | Adjust volume of the window under the cursor |
+| Ctrl + Shift + Middle click | Toggle mute on the window under the cursor   |
+| Ctrl + Shift + [ or ]       | Adjust volume of the active window           |
+| Ctrl + Shift + m            | Toggle mute on the active window             |
+| Ctrl + Shift + x            | Quit the application                         |
 
 You can also refresh the config or quit the application using the tray icon.
 
@@ -36,8 +48,7 @@ Reassigning activators and function keys ought to work how you expect.
 
 ## Todo
 
-The various session-finding mechanisms in system_interactions evolved to handle an increasing set of edge cases, and is now somewhat unholy.  These bits could use some work to improve search performance.
-
-Hoping to find a way to reduce the suspicion of antivirus software.
+The session-finding mechanisms in system_interactions grew convoluted to handle edge cases - needs tidying.
+Hoping to find a way to reduce the suspicion of antivirus software besides buying an expensive codesign cert.
 
 Feedback welcome!
