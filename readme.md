@@ -15,15 +15,21 @@ Features:
 ## Release Usage
 
 Warning: some antiviruses may flag the installer package as malware due to the system calls. It may be preferable to run from source.
+
 Download and extract the release package from https://github.com/Ananym/Audiomixer/releases .
+
 Run the executable, or add it to startup using the included "add-exe-to-startup.ps1" script.
 
 ## Running from Source:
 
 Requires python 3.10 or later.
+
 Download the repository (git clone or download zip and extract)
+
 Run `pip install -r requirements.txt` to install dependencies.
+
 Run the included "add-py-to-startup.ps1" script to add audiomixer to startup,
+
 Or just run `python audiomixer.py` to start the application directly.
 
 ## Default keys
