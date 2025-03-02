@@ -1,11 +1,12 @@
-
 $exeName = "audiomixer.exe"
 $currentDir = Get-Location
 $exePath = Join-Path -Path $currentDir -ChildPath $exeName
 
 if (-not (Test-Path $exePath)) {
-    [System.Windows.Forms.MessageBox]::Show("The executable '$exeName' was not found in the current directory.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
-    exit
+    Write-Host "Error: The executable '$exeName' was not found in the current directory." -ForegroundColor Red
+    Write-Host "`nPress any key to exit..."
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
+    exit 1
 }
 
 $shell = New-Object -ComObject WScript.Shell
@@ -14,4 +15,6 @@ $shortcut = $shell.CreateShortcut("$startupFolder\$exeName.lnk")
 $shortcut.TargetPath = $exePath
 $shortcut.Save()
 
-[System.Windows.Forms.MessageBox]::Show("$exeName has been added to Windows startup.", "Success", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+Write-Host "Success: $exeName has been added to Windows startup." -ForegroundColor Green
+Write-Host "`nPress any key to exit..."
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
